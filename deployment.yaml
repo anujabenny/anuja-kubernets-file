@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flower-app-deployment
+  name: anuja-app-deployment
 spec: #define deployment
   replicas: 3 #number of pods
   selector:
