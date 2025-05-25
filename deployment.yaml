@@ -21,6 +21,6 @@ spec: #define deployment
             cpu: "100m"
           requests:
             memory: "128Mi"
-            cpu: "250m"
+            cpu: "50m"
         ports:
         - containerPort: 3015
