@@ -6,11 +6,11 @@ spec: #define deployment
   replicas: 3 #number of pods
   selector:
     matchLabels:
-      app: web 
+      app: anujalabel 
   template:
     metadata:
       labels:
-        app: web 
+        app: anujalabel 
     spec: #define pod behaviour
       containers:
       - name: cart-app
@@ -24,3 +24,17 @@ spec: #define deployment
             cpu: "50m"
         ports:
         - containerPort: 3015
+--- 
+# writing service.yaml file to expose the application
+apiVersion: v1
+kind: Service
+metadata:
+  name: anuja-app-svc
+spec:
+  selector:
+    app: anujalabel 
+  ports:
+  - port: 3016 #service port number
+    targetPort: 3015 #container port number
+  type: LoadBalancer #type of service
+
